@@ -28,8 +28,8 @@ function setup() {
   foodStock = database.ref('Food')
   foodStock.on("value",readStock);
 
-  Lastfeed = database.ref('FeedTime')
-  Lastfeed.on("value",readTime)
+  FeedTime = database.ref('FeedTime')
+  FeedTime.on("value",readTime)
 
   var dogo = database.ref('Food');
   dogo.on("value", readPosition, showError);
@@ -43,7 +43,7 @@ function setup() {
    
 }
 function readTime(time){
-  FeedTime = time.val()
+  Lastfeed = time.val()
 }
 function readStock(data){
  foodS = data.val();
